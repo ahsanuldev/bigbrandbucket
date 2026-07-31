@@ -5,6 +5,8 @@ import TrustedBy from '../components/homepage/TrustedBy';
 import AboutUs from '../components/homepage/AboutUs';
 import WebsiteDesignSection from '../components/homepage/WebsiteDesignSection';
 import ServicesWeOffer from '../components/homepage/ServicesWeOffer';
+import IdeaSolutionSection from '../components/homepage/IdeaSolutionSection';
+import TechStackSection from '../components/homepage/TechStackSection';
 
 const HomePage = () => {
   return (
@@ -15,6 +17,8 @@ const HomePage = () => {
       <AboutUs />
       <WebsiteDesignSection />
       <ServicesWeOffer />
+      <IdeaSolutionSection />
+      <TechStackSection />
     </main>
   );
 };
