@@ -7,6 +7,7 @@ import WebsiteDesignSection from '../components/homepage/WebsiteDesignSection';
 import ServicesWeOffer from '../components/homepage/ServicesWeOffer';
 import IdeaSolutionSection from '../components/homepage/IdeaSolutionSection';
 import TechStackSection from '../components/homepage/TechStackSection';
+import IndustriesWeServeSection from '../components/homepage/IndustriesWeServeSection';
 
 const HomePage = () => {
   return (
@@ -19,6 +20,7 @@ const HomePage = () => {
       <ServicesWeOffer />
       <IdeaSolutionSection />
       <TechStackSection />
+      <IndustriesWeServeSection />
     </main>
   );
 };
