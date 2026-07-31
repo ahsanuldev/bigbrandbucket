@@ -46,6 +46,12 @@ const TrustedBy = () => {
           ))}
         </motion.div>
       </div>
+
+      <div className="w-full flex items-center justify-between mt-10 md:mt-14">
+        <img src={fadeLineLeft} alt="decorative line left" className="hidden md:block w-[35%] lg:w-[25%] h-[2px] object-fill" />
+        <h2 className="text-2xl md:text-3xl font-normal text-[#111111] whitespace-nowrap px-4 text-center w-full md:w-auto">Over 700+ Global Clients</h2>
+        <img src={fadeLineRight} alt="decorative line right" className="hidden md:block w-[35%] lg:w-[25%] h-[2px] object-fill" />
+      </div>
     </section>
   );
 };
