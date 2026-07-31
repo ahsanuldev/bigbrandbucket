@@ -15,7 +15,7 @@ const Hero = () => {
     <section className="relative w-full pt-16 pb-24 md:pt-24 md:pb-32 overflow-hidden bg-white">
       {/* Light Background Grid */}
       <div 
-        className="absolute inset-0 z-0 opacity-10"
+        className="absolute inset-0 z-0 opacity-20"
         style={{ backgroundImage: `url(${heroGrid})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
       ></div>
 
@@ -27,7 +27,8 @@ const Hero = () => {
           <img 
             src={starHeroSection} 
             alt="background shape" 
-            className="absolute -bottom-12 -left-24 w-62.5   max-w-none -z-10 opacity-70"
+            draggable={false}
+            className="absolute -bottom-12 select-none -left-24 w-62.5   max-w-none -z-10 opacity-70"
           />
 
           {/* Badge */}
@@ -43,7 +44,8 @@ const Hero = () => {
             <img 
               src={heroTextAsset} 
               alt="sparkle" 
-              className="inline-block w-8 md:w-10 ml-3 -mt-4"
+              draggable={false}
+              className="inline-block select-none w-8 md:w-8 ml-3 -mt-12"
             />
             <br />
             <span className="text-primary">IT Services & Solutions</span>
@@ -71,7 +73,8 @@ const Hero = () => {
             <img 
               src={ellipseBehind} 
               alt="circle background" 
-              className="absolute top-1/3 -translate-y-1/2 right-0 translate-x-[40%] w-[40%] max-w-none -z-10"
+              draggable={false}
+              className="absolute top-1/3 select-none -translate-y-1/2 right-0 translate-x-[40%] w-[40%] max-w-none -z-10"
             />
             
             {/* The main hero visual */}
