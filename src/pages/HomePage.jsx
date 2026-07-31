@@ -20,7 +20,7 @@ const HomePage = () => {
       <ServicesWeOffer />
       <IdeaSolutionSection />
       <TechStackSection />
-      <IndustriesWeServeSection />
+      {/* <IndustriesWeServeSection /> */}
     </main>
   );
 };
