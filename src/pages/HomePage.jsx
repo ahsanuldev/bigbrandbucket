@@ -3,6 +3,7 @@ import Hero from '../components/homepage/Hero';
 import ServicesMarquee from '../components/homepage/ServicesMarquee';
 import TrustedBy from '../components/homepage/TrustedBy';
 import AboutUs from '../components/homepage/AboutUs';
+import WebsiteDesignSection from '../components/homepage/WebsiteDesignSection';
 
 const HomePage = () => {
   return (
@@ -11,6 +12,7 @@ const HomePage = () => {
       <ServicesMarquee />
       <TrustedBy />
       <AboutUs />
+      <WebsiteDesignSection />
     </main>
   );
 };
