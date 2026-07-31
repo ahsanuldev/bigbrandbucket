@@ -4,6 +4,7 @@ import ServicesMarquee from '../components/homepage/ServicesMarquee';
 import TrustedBy from '../components/homepage/TrustedBy';
 import AboutUs from '../components/homepage/AboutUs';
 import WebsiteDesignSection from '../components/homepage/WebsiteDesignSection';
+import ServicesWeOffer from '../components/homepage/ServicesWeOffer';
 
 const HomePage = () => {
   return (
@@ -13,6 +14,7 @@ const HomePage = () => {
       <TrustedBy />
       <AboutUs />
       <WebsiteDesignSection />
+      <ServicesWeOffer />
     </main>
   );
 };
