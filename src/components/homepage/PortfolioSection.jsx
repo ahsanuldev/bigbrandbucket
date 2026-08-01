@@ -8,6 +8,7 @@ import SectionTitle from '../ui/SectionTitle';
 import 'swiper/css';
 
 // Assets
+import ellipseBehind from '../../assets/Ellipse-for-behind.png';
 import imgKunjMotors from '../../assets/portfolio/portfolio-kunjmotors-scaled.jpg';
 import imgSdInc from '../../assets/portfolio/portfolio-sd-inc.jpg';
 import imgAtomMep from '../../assets/portfolio/portfolio-atom-mep.jpg';
@@ -36,9 +37,19 @@ const PortfolioSection = () => {
 
   return (
     <section className="w-full py-16 md:py-24 bg-white overflow-hidden relative">
-      {/* Decorative semi-circles behind title */}
-      <div className="absolute top-0 left-0 w-64 h-64 bg-[#e8f3f1] rounded-full blur-3xl opacity-50 -translate-x-1/2 -translate-y-1/2"></div>
-      <div className="absolute top-0 right-0 w-64 h-64 bg-[#e8f3f1] rounded-full blur-3xl opacity-50 translate-x-1/2 -translate-y-1/2"></div>
+      {/* Decorative semi-circles on sides */}
+      <img 
+        src={ellipseBehind} 
+        alt="" 
+        draggable={false}
+        className="absolute top-[35%] left-0 -translate-x-1/2 -translate-y-1/2 w-[200px] md:w-[250px] max-w-none z-0 opacity-65"
+      />
+      <img 
+        src={ellipseBehind} 
+        alt="" 
+        draggable={false}
+        className="absolute top-[35%] right-0 translate-x-1/2 -translate-y-1/2 w-[200px] md:w-[250px] max-w-none z-0 opacity-65"
+      />
 
       <div className="w-full px-4 md:px-8 lg:px-10 relative z-10">
         
