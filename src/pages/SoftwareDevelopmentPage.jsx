@@ -14,6 +14,10 @@ import bestSoftwareImg from '../assets/soft-dev-page/98295-1-e1778923355144.jpg'
 import hireDevelopersImg from '../assets/soft-dev-page/18697-e1778923584410.jpg';
 import maintenanceSupportImg from '../assets/soft-dev-page/1004-e1778923846313.jpg';
 import clientFocusedImg from '../assets/soft-dev-page/46797-e1778924090284.jpg';
+import servingGloballyImg from '../assets/soft-dev-page/737-e1778924537672.jpg';
+import PortfolioSection from '../components/shared/PortfolioSection';
+import FaqSection from '../components/shared/FaqSection';
+import SoftwareBannerCTA from '../components/software-development/SoftwareBannerCTA';
 
 const customSoftwareContent = {
   title: <>Why <span className="text-primary">Custom Software</span> Is<br />Better Than Ready-Made<br />Software</>,
@@ -98,6 +102,22 @@ const clientFocusedContent = {
   image: clientFocusedImg
 };
 
+const servingGloballyContent = {
+  title: "Serving Businesses Globally",
+  description1: <p>Big Brand Bucket provides custom software development services for businesses across India, UAE, UK, and USA with scalable digital solutions tailored to regional business requirements.</p>,
+  subtitle: null,
+  listItems: [],
+  description2: (
+    <ul className="list-disc ml-5 mt-4 space-y-1">
+      <li className="text-gray-600">Dubai Software Solutions</li>
+      <li className="text-primary">Sharjah Custom Software Solutions</li>
+      <li className="text-primary">Ajman Software Development Services</li>
+      <li className="text-gray-600">Software Development Services in USA</li>
+    </ul>
+  ),
+  image: servingGloballyImg
+};
+
 const SoftwareDevelopmentPage = () => {
   return (
     <main>
@@ -178,6 +198,23 @@ const SoftwareDevelopmentPage = () => {
         description2={clientFocusedContent.description2}
         image={clientFocusedContent.image}
       />
+
+      <PortfolioSection />
+
+      <ContentWithImage 
+        title={servingGloballyContent.title}
+        description1={servingGloballyContent.description1}
+        subtitle={servingGloballyContent.subtitle}
+        listItems={servingGloballyContent.listItems}
+        description2={servingGloballyContent.description2}
+        image={servingGloballyContent.image}
+        imagePosition="left"
+        bgClass="bg-white"
+      />
+
+      <FaqSection />
+      <SoftwareBannerCTA />
+
     </main>
   );
 };
