@@ -21,9 +21,9 @@ const ServiceHero = ({ eyebrow, title, description, checklist, bgImage = default
             <h1 className="text-[36px] md:text-[46px] lg:text-[54px] font-medium leading-[1.15] mb-6">
               {title}
             </h1>
-            <p className="text-[15px] md:text-[16.5px] text-white/90 leading-relaxed mb-10 max-w-[90%]">
+            <div className="text-[15px] md:text-[16.5px] text-white/90 leading-relaxed mb-10 max-w-[90%] flex flex-col gap-4">
               {description}
-            </p>
+            </div>
 
             {/* Checklist */}
             {checklist && checklist.length > 0 && (
