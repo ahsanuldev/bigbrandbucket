@@ -7,10 +7,12 @@ import bgImage from '../assets/about-page/e37b828d865eff5aee0394507980868482a42f
 import iconWarehouse from '../assets/manufacturing/warehouse.png';
 import iconSupplyChain from '../assets/manufacturing/supply-chain-management-150x150.png';
 import iconTransport from '../assets/manufacturing/cross-docking-150x150.png';
+import innovationImg from '../assets/manufacturing/214.jpg';
+import ctaImg from '../assets/manufacturing/120.jpg';
 
 import ManufacturingExpertise from '../components/manufacturing/ManufacturingExpertise';
-import TransformingInnovation from '../components/manufacturing/TransformingInnovation';
-import ManufacturingCTA from '../components/manufacturing/ManufacturingCTA';
+import SplitContentSection from '../components/shared/SplitContentSection';
+import SplitCTASection from '../components/shared/SplitCTASection';
 import IndustriesWeServeSection from '../components/shared/IndustriesWeServeSection';
 import TrustedBy from '../components/shared/TrustedBy';
 import TestimonialsSection from '../components/shared/TestimonialsSection';
@@ -78,8 +80,34 @@ const ManufacturingPage = () => {
       </section>
 
       <ManufacturingExpertise />
-      <TransformingInnovation />
-      <ManufacturingCTA />
+      <SplitContentSection 
+        title={
+          <>
+            Transforming <span className="text-primary">Businesses</span><br />
+            Through <span className="text-primary">Innovation</span>
+          </>
+        }
+        description="In today's digital-first world, staying competitive requires embracing innovation. Our IT, web, and mobile app solutions are designed to streamline operations, enhance user experiences, and drive measurable business growth—giving you a strong competitive edge in the digital landscape."
+        listItems={[
+          "Real-Time Performance & Analytics",
+          "Scalable Web & App Solutions",
+          "Quality-Driven Development",
+          "Secure & Reliable Systems",
+          "Cost-Effective Digital Solutions"
+        ]}
+        image={innovationImg}
+        imageAlt="Transforming Businesses"
+        bgColor="bg-white"
+        pillLayout="flex"
+      />
+      
+      <SplitCTASection 
+        title="Ready to Transform Your Digital Presence"
+        description1="Big Brand Bucket visions to provide better lives and days by solving everyday situations with the help of flawless design and IT solutions."
+        description2="We have cheerful and fulfilled customers spread everywhere throughout the world."
+        buttonText="Get Started"
+        image={ctaImg}
+      />
       <IndustriesWeServeSection bgColor="bg-white" />
       <TrustedBy />
       <TestimonialsSection />
