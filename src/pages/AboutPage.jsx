@@ -1,5 +1,6 @@
 import React from 'react';
 import PageHeader from '../components/shared/PageHeader';
+import AboutSection from '../components/aboutpage/AboutSection';
 import aboutBgImage from '../assets/about-page/e37b828d865eff5aee0394507980868482a42f88.jpg';
 
 const AboutPage = () => {
@@ -11,6 +12,7 @@ const AboutPage = () => {
         description="We combine innovative thinking, advanced technology, and customer-focused design to deliver smarter solutions that drive lasting impact."
         bgImage={aboutBgImage}
       />
+      <AboutSection />
     </main>
   );
 };
