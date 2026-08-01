@@ -1,11 +1,9 @@
-import React from 'react';
 import ServiceHero from '../components/shared/ServiceHero';
 import TrustedBy from '../components/shared/TrustedBy';
-import WorkingProcess from '../components/shared/WorkingProcess';
-import PortfolioSection from '../components/shared/PortfolioSection';
-import DistinctiveEdge from '../components/shared/DistinctiveEdge';
-import FaqSection from '../components/shared/FaqSection';
-import TestimonialsSection from '../components/shared/TestimonialsSection';
+import WhyChooseUs from '../components/software-development/WhyChooseUs';
+import SoftwareServicesSection from '../components/software-development/SoftwareServicesSection';
+import SoftwareIndustriesSection from '../components/software-development/SoftwareIndustriesSection';
+import SoftwareTechStack from '../components/software-development/SoftwareTechStack';
 
 import softwareBg from '../assets/service/solution.webp';
 
@@ -32,13 +30,12 @@ const SoftwareDevelopmentPage = () => {
         ]}
         bgImage={softwareBg}
       />
-
+      
+      <WhyChooseUs />
       <TrustedBy />
-      <WorkingProcess />
-      <PortfolioSection />
-      <DistinctiveEdge />
-      <FaqSection />
-      <TestimonialsSection />
+      <SoftwareServicesSection />
+      <SoftwareIndustriesSection />
+      <SoftwareTechStack />
     </main>
   );
 };
