@@ -1,7 +1,7 @@
 import React from 'react';
 import heroTextAsset from '../../assets/hero-text-asset.png';
 
-const PageHeader = ({ title, subtitle, description, bgImage }) => {
+const PageHeader = ({ title, subtitle, description, bgImage, children }) => {
   return (
     <section 
       className="relative w-full py-24 md:py-32 lg:py-40 flex items-center justify-center bg-cover bg-center bg-no-repeat"
@@ -35,6 +35,12 @@ const PageHeader = ({ title, subtitle, description, bgImage }) => {
           <p className="text-[15px] md:text-[15.5px] leading-relaxed text-white/90 max-w-3xl mx-auto">
             {description}
           </p>
+        )}
+        
+        {children && (
+          <div className="mt-8">
+            {children}
+          </div>
         )}
       </div>
     </section>

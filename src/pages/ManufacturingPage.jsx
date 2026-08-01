@@ -1,8 +1,78 @@
 import React from 'react';
+import PageHeader from '../components/shared/PageHeader';
+import Button from '../components/ui/Button';
+import bgImage from '../assets/service/solution.webp';
+
+// Icons
+import iconWarehouse from '../assets/manufacturing/warehouse.png';
+import iconSupplyChain from '../assets/manufacturing/supply-chain-management-150x150.png';
+import iconTransport from '../assets/manufacturing/cross-docking-150x150.png';
+
+import ManufacturingExpertise from '../components/manufacturing/ManufacturingExpertise';
+import TransformingInnovation from '../components/manufacturing/TransformingInnovation';
 
 const ManufacturingPage = () => {
   return (
-    <div className='p-24'>ManufacturingPage</div>
+    <main className="bg-[#f8fafa] min-h-screen">
+      <PageHeader 
+        title={<>Transforming Manufacturing<br />Excellence with Smart IT Solutions</>}
+        description="We combine innovative thinking, advanced technology, and customer-focused design to deliver smarter solutions that drive lasting impact."
+        bgImage={bgImage}
+      >
+        <Button variant="secondary" arrow={true}>
+          Request A Quote
+        </Button>
+      </PageHeader>
+
+      {/* Cards Section */}
+      <section className="relative z-20 max-w-[1400px] mx-auto px-6 md:px-12 -mt-16 md:-mt-24 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          {/* Card 1 */}
+          <div className="bg-white rounded-[1.25rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-gray-100 flex flex-col items-center text-center">
+            <div className="mb-6">
+              <img src={iconWarehouse} alt="Warehouse Management" className="w-16 h-16 object-contain" />
+            </div>
+            <h3 className="text-[17px] md:text-[18px] font-semibold text-gray-900 mb-4">
+              Warehouse Management Solution
+            </h3>
+            <p className="text-gray-500 text-[14px] leading-relaxed">
+              Streamline automotive parts storage and inventory with real-time tracking, automated workflows, and accurate stock control—ensuring faster dispatch, reduced downtime, and optimized warehouse operations.
+            </p>
+          </div>
+
+          {/* Card 2 */}
+          <div className="bg-white rounded-[1.25rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-gray-100 flex flex-col items-center text-center">
+            <div className="mb-6">
+              <img src={iconSupplyChain} alt="Supply Chain Management" className="w-16 h-16 object-contain" />
+            </div>
+            <h3 className="text-[17px] md:text-[18px] font-semibold text-gray-900 mb-4">
+              Supply Chain Management Solution
+            </h3>
+            <p className="text-gray-500 text-[14px] leading-relaxed">
+              Enhance supply chain visibility across suppliers, plants, and distributors with intelligent planning and real-time insights that improve demand forecasting, reduce disruptions, and support just-in-time manufacturing.
+            </p>
+          </div>
+
+          {/* Card 3 */}
+          <div className="bg-white rounded-[1.25rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-gray-100 flex flex-col items-center text-center">
+            <div className="mb-6">
+              <img src={iconTransport} alt="Transportation Management" className="w-16 h-16 object-contain" />
+            </div>
+            <h3 className="text-[17px] md:text-[18px] font-semibold text-gray-900 mb-4">
+              Transportation Management
+            </h3>
+            <p className="text-gray-500 text-[14px] leading-relaxed">
+              Optimize inbound and outbound automotive logistics with smart route planning, shipment tracking, and freight optimization to ensure on-time deliveries and lower transportation costs.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <ManufacturingExpertise />
+      <TransformingInnovation />
+    </main>
   );
 };
 
