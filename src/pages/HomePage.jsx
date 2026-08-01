@@ -10,6 +10,7 @@ import TechStackSection from '../components/homepage/TechStackSection';
 import IndustriesWeServeSection from '../components/homepage/IndustriesWeServeSection';
 import PortfolioSection from '../components/homepage/PortfolioSection';
 import GlobalPresenceSection from '../components/homepage/GlobalPresenceSection';
+import TestimonialsSection from '../components/homepage/TestimonialsSection';
 import ContactSection from '../components/homepage/ContactSection';
 import FaqSection from '../components/homepage/FaqSection';
 
@@ -27,8 +28,9 @@ const HomePage = () => {
       <PortfolioSection />
       <IndustriesWeServeSection />
       <GlobalPresenceSection />
-      <ContactSection />
       <FaqSection />
+      <ContactSection />
+      <TestimonialsSection />
     </main>
   );
 };
