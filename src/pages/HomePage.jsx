@@ -8,6 +8,7 @@ import ServicesWeOffer from '../components/homepage/ServicesWeOffer';
 import IdeaSolutionSection from '../components/homepage/IdeaSolutionSection';
 import TechStackSection from '../components/homepage/TechStackSection';
 import IndustriesWeServeSection from '../components/homepage/IndustriesWeServeSection';
+import PortfolioSection from '../components/homepage/PortfolioSection';
 
 const HomePage = () => {
   return (
@@ -20,7 +21,8 @@ const HomePage = () => {
       <ServicesWeOffer />
       <IdeaSolutionSection />
       <TechStackSection />
-      {/* <IndustriesWeServeSection /> */}
+      <PortfolioSection />
+      <IndustriesWeServeSection />
     </main>
   );
 };
