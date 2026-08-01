@@ -1,6 +1,7 @@
 import React from 'react';
 import PageHeader from '../components/shared/PageHeader';
 import AboutSection from '../components/aboutpage/AboutSection';
+import VideoSection from '../components/aboutpage/VideoSection';
 import aboutBgImage from '../assets/about-page/e37b828d865eff5aee0394507980868482a42f88.jpg';
 
 const AboutPage = () => {
@@ -13,6 +14,7 @@ const AboutPage = () => {
         bgImage={aboutBgImage}
       />
       <AboutSection />
+      <VideoSection />
     </main>
   );
 };
