@@ -7,7 +7,7 @@ import WebsiteDesignSection from '../components/homepage/WebsiteDesignSection';
 import ServicesWeOffer from '../components/homepage/ServicesWeOffer';
 import IdeaSolutionSection from '../components/homepage/IdeaSolutionSection';
 import TechStackSection from '../components/homepage/TechStackSection';
-import IndustriesWeServeSection from '../components/homepage/IndustriesWeServeSection';
+import IndustriesWeServeSection from '../components/shared/IndustriesWeServeSection';
 import PortfolioSection from '../components/shared/PortfolioSection';
 import GlobalPresenceSection from '../components/shared/GlobalPresenceSection';
 import TestimonialsSection from '../components/shared/TestimonialsSection';

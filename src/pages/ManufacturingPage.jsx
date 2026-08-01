@@ -11,6 +11,11 @@ import iconTransport from '../assets/manufacturing/cross-docking-150x150.png';
 import ManufacturingExpertise from '../components/manufacturing/ManufacturingExpertise';
 import TransformingInnovation from '../components/manufacturing/TransformingInnovation';
 import ManufacturingCTA from '../components/manufacturing/ManufacturingCTA';
+import IndustriesWeServeSection from '../components/shared/IndustriesWeServeSection';
+import TrustedBy from '../components/shared/TrustedBy';
+import TestimonialsSection from '../components/shared/TestimonialsSection';
+import GlobalPresenceSection from '../components/shared/GlobalPresenceSection';
+import FaqSection from '../components/shared/FaqSection';
 
 const ManufacturingPage = () => {
   return (
@@ -75,6 +80,11 @@ const ManufacturingPage = () => {
       <ManufacturingExpertise />
       <TransformingInnovation />
       <ManufacturingCTA />
+      <IndustriesWeServeSection bgColor="bg-white" />
+      <TrustedBy />
+      <TestimonialsSection />
+      <GlobalPresenceSection />
+      <FaqSection />
     </main>
   );
 };

@@ -1,9 +1,9 @@
 import React from 'react';
 import industriesImg from '../../assets/industries-we-served.png';
 
-const IndustriesWeServeSection = () => {
+const IndustriesWeServeSection = ({ bgColor = 'bg-bg' }) => {
   return (
-    <section className="w-full py-16 md:py-24 bg-bg">
+    <section className={`w-full py-16 md:py-24 ${bgColor}`}>
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
         
         {/* Left Content */}
