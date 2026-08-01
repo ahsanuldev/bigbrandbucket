@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/shared/Navbar';
+import Footer from './components/shared/Footer';
 
 // Import Pages
 import HomePage from './pages/HomePage';
@@ -24,7 +25,7 @@ import ContactPage from './pages/ContactPage';
 const App = () => {
   return (
     <BrowserRouter>
-      <div className="min-h-screen font-sans">
+      <div className="min-h-screen font-san overflow-x-clip">
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -50,6 +51,7 @@ const App = () => {
           <Route path="/portfolio" element={<PortfolioPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
+        <Footer />
       </div>
     </BrowserRouter>
   );
