@@ -1,6 +1,12 @@
 import React from 'react';
 import ServiceHero from '../components/shared/ServiceHero';
 import FeatureGridSection from '../components/shared/FeatureGridSection';
+import TrustedBy from '../components/shared/TrustedBy';
+import WorkingProcess from '../components/shared/WorkingProcess';
+import PortfolioSection from '../components/shared/PortfolioSection';
+import DistinctiveEdge from '../components/shared/DistinctiveEdge';
+import FaqSection from '../components/shared/FaqSection';
+import TestimonialsSection from '../components/shared/TestimonialsSection';
 
 import featureVisual from '../assets/service/african-american-business-associates-reviewing-data-analytics-scaled.jpg';
 
@@ -53,6 +59,12 @@ const AppDevelopmentPage = () => {
           }
         ]}
       />
+      <TrustedBy />
+      <WorkingProcess />
+      <PortfolioSection />
+      <DistinctiveEdge />
+      <FaqSection />
+      <TestimonialsSection />
     </main>
   );
 };
