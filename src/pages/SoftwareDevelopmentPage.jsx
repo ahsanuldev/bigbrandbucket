@@ -11,6 +11,9 @@ import ContentWithImage from '../components/software-development/ContentWithImag
 import softwareBg from '../assets/service/solution.webp';
 import customSoftwareImg from '../assets/soft-dev-page/18706-e1778923035473-1402x1536.jpg';
 import bestSoftwareImg from '../assets/soft-dev-page/98295-1-e1778923355144.jpg';
+import hireDevelopersImg from '../assets/soft-dev-page/18697-e1778923584410.jpg';
+import maintenanceSupportImg from '../assets/soft-dev-page/1004-e1778923846313.jpg';
+import clientFocusedImg from '../assets/soft-dev-page/46797-e1778924090284.jpg';
 
 const customSoftwareContent = {
   title: <>Why <span className="text-primary">Custom Software</span> Is<br />Better Than Ready-Made<br />Software</>,
@@ -45,6 +48,54 @@ const bestSoftwareContent = {
   ],
   description2: <p>We create digital products that deliver real business value, enhance operational efficiency and provide measurable ROI.</p>,
   image: bestSoftwareImg
+};
+
+const hireDevelopersContent = {
+  title: <>Hire Dedicated <span className="text-primary">Software<br />Developers</span> in <span className="text-primary">Gurgaon</span></>,
+  description1: <p>Need a reliable development team for your project?<br />Hire dedicated software developers in Gurgaon from Big Brand Bucket and build future-proof digital solutions with complete technical support.</p>,
+  subtitle: "Hiring Models:",
+  listItems: [
+    "Dedicated development team",
+    "Fixed-price projects",
+    "Hourly hiring model",
+    "Offshore development services"
+  ],
+  description2: <p>Our developers are an extension of your internal team that ensures smooth collaboration throughout the project lifecycle.</p>,
+  image: hireDevelopersImg
+};
+
+const maintenanceSupportContent = {
+  title: <>Software Maintenance &<br />Support Services</>,
+  description1: <p>Software development does not end after deployment. We provide you maintenance and support after deployment to keep your applications secure, updated, and optimized.</p>,
+  subtitle: "Our Maintenance Services Include:",
+  listItems: [
+    "Security updates",
+    "Bug fixing",
+    "Performance optimization",
+    "Cloud monitoring",
+    "Feature enhancements",
+    "Database optimization",
+    "Technical troubleshooting"
+  ],
+  description2: null,
+  image: maintenanceSupportImg
+};
+
+const clientFocusedContent = {
+  title: <>Client-Focused Software<br />Solutions for Gurgaon<br />Businesses</>,
+  description1: <p>From startups in Cyber Hub to enterprises in Udyog Vihar and businesses across Gurugram, we help organizations develop software systems that simplify operations, enhance customer experiences and drive long-term digital growth.</p>,
+  subtitle: "Our software development solutions are ready to:",
+  listItems: [
+    "Improve operational efficiency",
+    "Reduce manual workload",
+    "Automate business workflows",
+    "Enhance customer management",
+    "Increase scalability",
+    "Improve data security",
+    "Support digital transformation"
+  ],
+  description2: null,
+  image: clientFocusedImg
 };
 
 const SoftwareDevelopmentPage = () => {
@@ -97,6 +148,35 @@ const SoftwareDevelopmentPage = () => {
         image={bestSoftwareContent.image}
         imagePosition="left"
         bgClass="bg-white"
+      />
+
+      <ContentWithImage 
+        title={hireDevelopersContent.title}
+        description1={hireDevelopersContent.description1}
+        subtitle={hireDevelopersContent.subtitle}
+        listItems={hireDevelopersContent.listItems}
+        description2={hireDevelopersContent.description2}
+        image={hireDevelopersContent.image}
+      />
+
+      <ContentWithImage 
+        title={maintenanceSupportContent.title}
+        description1={maintenanceSupportContent.description1}
+        subtitle={maintenanceSupportContent.subtitle}
+        listItems={maintenanceSupportContent.listItems}
+        description2={maintenanceSupportContent.description2}
+        image={maintenanceSupportContent.image}
+        imagePosition="left"
+        bgClass="bg-white"
+      />
+
+      <ContentWithImage 
+        title={clientFocusedContent.title}
+        description1={clientFocusedContent.description1}
+        subtitle={clientFocusedContent.subtitle}
+        listItems={clientFocusedContent.listItems}
+        description2={clientFocusedContent.description2}
+        image={clientFocusedContent.image}
       />
     </main>
   );
