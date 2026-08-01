@@ -1,8 +1,8 @@
 import React from 'react';
-import bgImage from '../../assets/service/bg-services.webp';
+import defaultBgImage from '../../assets/service/bg-services.webp';
 import indFlag from '../../assets/flags/in.svg';
 
-const ServiceHero = ({ eyebrow, title, description, checklist }) => {
+const ServiceHero = ({ eyebrow, title, description, checklist, bgImage = defaultBgImage }) => {
   return (
     <section
       className="relative w-full pt-28 pb-40 lg:pt-26 lg:pb-30 bg-cover bg-center px-6 md:px-12 lg:px-24"
