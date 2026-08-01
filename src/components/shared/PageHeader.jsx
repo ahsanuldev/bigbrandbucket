@@ -1,10 +1,10 @@
 import React from 'react';
 import heroTextAsset from '../../assets/hero-text-asset.png';
 
-const PageHeader = ({ title, subtitle, description, bgImage, children }) => {
+const PageHeader = ({ title, subtitle, description, bgImage, children, className = '' }) => {
   return (
     <section 
-      className="relative w-full py-24 md:py-32 lg:py-40 flex items-center justify-center bg-cover bg-center bg-no-repeat"
+      className={`relative w-full py-24 md:py-32 lg:py-40 flex items-center justify-center bg-cover bg-center bg-no-repeat ${className}`}
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       {/* Teal Overlay */}

@@ -1,7 +1,7 @@
 import React from 'react';
 import PageHeader from '../components/shared/PageHeader';
 import Button from '../components/ui/Button';
-import bgImage from '../assets/service/solution.webp';
+import bgImage from '../assets/about-page/e37b828d865eff5aee0394507980868482a42f88.jpg';
 
 // Icons
 import iconWarehouse from '../assets/manufacturing/warehouse.png';
@@ -10,6 +10,7 @@ import iconTransport from '../assets/manufacturing/cross-docking-150x150.png';
 
 import ManufacturingExpertise from '../components/manufacturing/ManufacturingExpertise';
 import TransformingInnovation from '../components/manufacturing/TransformingInnovation';
+import ManufacturingCTA from '../components/manufacturing/ManufacturingCTA';
 
 const ManufacturingPage = () => {
   return (
@@ -18,6 +19,7 @@ const ManufacturingPage = () => {
         title={<>Transforming Manufacturing<br />Excellence with Smart IT Solutions</>}
         description="We combine innovative thinking, advanced technology, and customer-focused design to deliver smarter solutions that drive lasting impact."
         bgImage={bgImage}
+        className="pb-36 md:pb-48 lg:pb-56"
       >
         <Button variant="secondary" arrow={true}>
           Request A Quote
@@ -72,6 +74,7 @@ const ManufacturingPage = () => {
 
       <ManufacturingExpertise />
       <TransformingInnovation />
+      <ManufacturingCTA />
     </main>
   );
 };
