@@ -9,10 +9,10 @@ import IdeaSolutionSection from '../components/homepage/IdeaSolutionSection';
 import TechStackSection from '../components/homepage/TechStackSection';
 import IndustriesWeServeSection from '../components/homepage/IndustriesWeServeSection';
 import PortfolioSection from '../components/homepage/PortfolioSection';
-import GlobalPresenceSection from '../components/homepage/GlobalPresenceSection';
+import GlobalPresenceSection from '../components/shared/GlobalPresenceSection';
 import TestimonialsSection from '../components/homepage/TestimonialsSection';
 import ContactSection from '../components/homepage/ContactSection';
-import FaqSection from '../components/homepage/FaqSection';
+import FaqSection from '../components/shared/FaqSection';
 
 const HomePage = () => {
   return (

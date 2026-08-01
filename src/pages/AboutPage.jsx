@@ -5,6 +5,8 @@ import VideoSection from '../components/aboutpage/VideoSection';
 import WorkingProcess from '../components/shared/WorkingProcess';
 import CodeWeLiveBy from '../components/aboutpage/CodeWeLiveBy';
 import DistinctiveEdge from '../components/shared/DistinctiveEdge';
+import GlobalPresenceSection from '../components/shared/GlobalPresenceSection';
+import FaqSection from '../components/shared/FaqSection';
 import aboutBgImage from '../assets/about-page/e37b828d865eff5aee0394507980868482a42f88.jpg';
 
 const AboutPage = () => {
@@ -21,6 +23,8 @@ const AboutPage = () => {
       <WorkingProcess />
       <CodeWeLiveBy />
       <DistinctiveEdge />
+      <GlobalPresenceSection />
+      <FaqSection />
     </main>
   );
 };
