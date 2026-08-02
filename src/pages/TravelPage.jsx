@@ -178,30 +178,32 @@ const travelBenefitsData = {
 };
 
 const travelWhoWeServeData = {
-  title: "Who We Serve",
-  titleHighlight: "Serve",
+  title: <>Who We <span className="text-primary">Serve</span></>,
   description: "Our travel technology solutions are built for:",
   image: whoWeServeImg,
-  listItems: [
+  leftItems: [
     "Travel agencies & tour operators",
     "Online travel portals",
-    "Hospitality & hotel groups",
+    "Hospitality & hotel groups"
+  ],
+  rightItems: [
     "Destination management companies (DMCs)",
     "Corporate travel management firms"
   ]
 };
 
 const travelWhyChooseUsData = {
-  title: "Why Choose Us?",
-  titleHighlight: "Choose",
+  title: <>Why <span className="text-primary">Choose</span> Us?</>,
   image: whyChooseUsImg,
-  listItems: [
+  leftItems: [
     "Strong domain expertise in travel",
-    "End-to-end development & support",
     "Custom-built, scalable digital platforms",
-    "Secure and high-performance architecture",
     "Seamless third-party API integrations",
     "Intuitive UI/UX for travelers and agents"
+  ],
+  rightItems: [
+    "End-to-end development & support",
+    "Secure and high-performance architecture"
   ]
 };
 
