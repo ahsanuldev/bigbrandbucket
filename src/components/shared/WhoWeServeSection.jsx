@@ -10,7 +10,7 @@ const WhoWeServeSection = ({
   bgColor = 'bg-bg' 
 }) => {
   return (
-    <section className={`w-full py-16 md:py-24 ${bgColor}`}>
+    <section className={`w-full py-10 md:py-16 ${bgColor}`}>
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
         
         {/* Left Content */}
@@ -57,7 +57,7 @@ const WhoWeServeSection = ({
           <img 
             src={image} 
             alt="Who We Serve" 
-            className="w-full max-w-[600px] h-auto rounded-xl object-contain"
+            className="w-full max-w-[450px] h-auto rounded-xl object-contain"
           />
         </div>
 
