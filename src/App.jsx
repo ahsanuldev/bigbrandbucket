@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/shared/Navbar';
 import Footer from './components/shared/Footer';
+import ScrollToTop from './components/shared/ScrollToTop';
 
 // Import Pages
 import HomePage from './pages/HomePage';
@@ -25,6 +26,7 @@ import ContactPage from './pages/ContactPage';
 const App = () => {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="min-h-screen font-san overflow-x-clip">
         <Navbar />
         <Routes>

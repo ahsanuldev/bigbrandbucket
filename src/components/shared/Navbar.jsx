@@ -7,8 +7,8 @@ import Button from '../ui/Button';
 const navItems = [
   { label: 'Home', href: '/', isPrimary: true },
   { label: 'About', href: '/about' },
-  { 
-    label: 'Services', 
+  {
+    label: 'Services',
     id: 'services',
     dropdown: [
       { label: 'App Development', href: '/app-development' },
@@ -20,8 +20,8 @@ const navItems = [
       { label: 'Cross Platform Development', href: '/cross-platform-development' },
     ]
   },
-  { 
-    label: 'Industries', 
+  {
+    label: 'Industries',
     id: 'industries',
     dropdown: [
       { label: 'Manufacturing', href: '/manufacturing' },
@@ -74,7 +74,7 @@ const Navbar = () => {
           {navItems.map((item) => {
             if (item.dropdown) {
               return (
-                <div 
+                <div
                   key={item.id}
                   className="relative group cursor-pointer py-2"
                   onMouseEnter={() => handleMouseEnter(item.id)}
@@ -84,14 +84,14 @@ const Navbar = () => {
                     {item.label}
                     <FaCaretDown className="ml-1.5 text-xs" />
                   </div>
-                  
+
                   {activeDropdown === item.id && (
-                    <div className="absolute top-full left-0 bg-white min-w-[240px] border border-gray-100">
+                    <div className="absolute top-full left-0 bg-white w-max min-w-60 border border-gray-100">
                       {item.dropdown.map((subItem) => (
-                        <Link 
-                          key={subItem.label} 
-                          to={subItem.href} 
-                          className="block font-normal px-6 py-2.5 text-sm hover:bg-primary-alt hover:text-white transition-colors"
+                        <Link
+                          key={subItem.label}
+                          to={subItem.href}
+                          className="block font-normal px-6 py-2.5 text-sm whitespace-nowrap hover:bg-primary-alt hover:text-white transition-colors"
                         >
                           {subItem.label}
                         </Link>
@@ -103,9 +103,9 @@ const Navbar = () => {
             }
 
             return (
-              <Link 
+              <Link
                 key={item.label}
-                to={item.href} 
+                to={item.href}
                 className={`transition-colors ${item.isPrimary ? 'text-primary' : 'text-gray-800 hover:text-primary'}`}
               >
                 {item.label}
@@ -121,11 +121,11 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <div className="lg:hidden">
-          <button 
+          <button
             className="text-gray-800 p-2 cursor-pointer"
             onClick={() => setIsMobileMenuOpen(true)}
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
           </button>
         </div>
       </div>
@@ -133,14 +133,14 @@ const Navbar = () => {
       {/* Mobile Menu Sidebar */}
       {/* Backdrop */}
       {isMobileMenuOpen && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/50 z-40 lg:hidden transition-opacity"
           onClick={() => setIsMobileMenuOpen(false)}
         ></div>
       )}
 
       {/* Sidebar */}
-      <div 
+      <div
         className={`fixed top-0 left-0 h-full w-[85%] max-w-[320px] bg-[#f4f4f4] z-50 transform transition-transform duration-300 ease-in-out lg:hidden overflow-y-auto flex flex-col
           ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}
       >
@@ -148,7 +148,7 @@ const Navbar = () => {
           <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>
             <img src="/logo-bbb.png" alt="BigBrandBucket" className="h-16 w-auto object-contain" />
           </Link>
-          <button 
+          <button
             onClick={() => setIsMobileMenuOpen(false)}
             className="p-1 text-gray-800 border border-gray-800 rounded-sm hover:bg-gray-200 transition-colors"
           >
@@ -162,7 +162,7 @@ const Navbar = () => {
               const isExpanded = mobileExpandedMenu === item.id;
               return (
                 <div key={item.id} className="flex flex-col">
-                  <div 
+                  <div
                     className={`flex items-center justify-between px-6 py-4 cursor-pointer font-medium ${isExpanded ? 'text-primary' : 'text-gray-800'}`}
                     onClick={() => setMobileExpandedMenu(isExpanded ? null : item.id)}
                   >
@@ -171,15 +171,15 @@ const Navbar = () => {
                       {isExpanded ? <FaCaretUp className="text-sm" /> : <FaCaretDown className="text-sm" />}
                     </span>
                   </div>
-                  
+
                   {isExpanded && (
                     <div className="flex flex-col w-full bg-white/50">
                       {item.dropdown.map((subItem, index) => (
-                        <Link 
-                          key={subItem.label} 
-                          to={subItem.href} 
+                        <Link
+                          key={subItem.label}
+                          to={subItem.href}
                           onClick={() => setIsMobileMenuOpen(false)}
-                          className={`px-6 py-3.5 text-[15px] font-normal transition-colors text-gray-800 hover:bg-gray-200 hover:text-primary`}
+                          className={`px-6 py-3.5 text-[15px] font-normal transition-colors text-gray-800 hover:bg-primary-alt hover:text-white`}
                         >
                           {subItem.label}
                         </Link>
@@ -191,9 +191,9 @@ const Navbar = () => {
             }
 
             return (
-              <Link 
+              <Link
                 key={item.label}
-                to={item.href} 
+                to={item.href}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="px-6 py-4 font-medium text-gray-800 hover:text-primary transition-colors"
               >
@@ -205,7 +205,7 @@ const Navbar = () => {
 
         {/* Mobile Bottom CTA */}
         <div className="p-6 pt-0 mt-auto flex flex-col gap-4">
-          <Button variant="outline" className="w-fit border-[#0f6d70] text-[#0f6d70] hover:bg-[#0f6d70] hover:text-white rounded-full bg-transparent px-6" arrow>
+          <Button variant="outline" className="w-fit border-primary text-primary hover:bg-primary hover:text-white rounded-full bg-transparent px-6" arrow>
             Quote
           </Button>
         </div>
