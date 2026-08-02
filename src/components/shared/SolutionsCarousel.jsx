@@ -4,108 +4,21 @@ import { Autoplay } from 'swiper/modules';
 import SectionTitle from '../ui/SectionTitle';
 import 'swiper/css';
 
-import icon1 from '../../assets/logistics/monitor.png';
-import icon2 from '../../assets/logistics/cross-docking-300x300.png';
-import icon3 from '../../assets/logistics/warehouse.png';
-import icon4 from '../../assets/logistics/delivered-150x150.png';
-import icon5 from '../../assets/logistics/supply-chain-management-300x300.png';
-import icon6 from '../../assets/logistics/work-300x300.png';
-import icon7 from '../../assets/logistics/iot-300x300.png';
-
-const solutions = [
-  {
-    id: 1,
-    title: 'Fleet Management Software',
-    icon: icon1,
-    points: [
-      'Vehicle tracking & telematics',
-      'Fuel monitoring',
-      'Driver behavior analytics',
-      'Preventive maintenance alerts',
-      'Trip history & reports'
-    ]
-  },
-  {
-    id: 2,
-    title: 'Transportation & Delivery Management Systems (TMS/DMS)',
-    icon: icon2,
-    points: [
-      'Shipment planning & scheduling',
-      'Route optimization & geo-tracking',
-      'Proof of delivery (POD)',
-      'Order assignment & dispatch automation',
-      'Customer notifications & real-time updates'
-    ]
-  },
-  {
-    id: 3,
-    title: 'Warehouse Management Systems (WMS)',
-    icon: icon3,
-    points: [
-      'Inventory control',
-      'Barcode/RFID scanning',
-      'Slotting & put-away optimisation',
-      'Goods receiving & dispatch management',
-      'Stock reporting & forecasting'
-    ]
-  },
-  {
-    id: 4,
-    title: 'On-Demand Logistics & Courier Apps',
-    icon: icon4,
-    points: [
-      'Customer booking interface',
-      'Real-time driver allocation',
-      'Live tracking',
-      'Fare estimation & digital payments',
-      'Ratings & reviews'
-    ]
-  },
-  {
-    id: 5,
-    title: 'Supply Chain Management (SCM) Software',
-    icon: icon5,
-    points: [
-      'Supplier & vendor management',
-      'Demand forecasting',
-      'Purchase planning',
-      'Logistics & distribution monitoring'
-    ]
-  },
-  {
-    id: 6,
-    title: 'Driver & Workforce Management Apps',
-    icon: icon6,
-    points: [
-      'Attendance & shift scheduling',
-      'Task assignment',
-      'Live location & trip monitoring',
-      'Performance analytics'
-    ]
-  },
-  {
-    id: 7,
-    title: 'IoT & GPS Tracking Solutions',
-    icon: icon7,
-    points: [
-      'Live vehicle tracking',
-      'Temperature & cargo condition monitoring',
-      'Geofencing alerts',
-      'Sensor-based analytics'
-    ]
-  }
-];
-
-const LogisticsSolutions = () => {
+const SolutionsCarousel = ({ 
+  title, 
+  description, 
+  solutions, 
+  bgColor = 'bg-[#eef1f2]' 
+}) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const swiperRef = useRef(null);
 
   return (
-    <section className="w-full py-16 md:py-24 bg-[#eef1f2]">
+    <section className={`w-full py-16 md:py-24 ${bgColor}`}>
       <div className="w-full px-4 md:px-12 lg:px-20 mx-auto">
         <SectionTitle 
-          title={<>Our Logistics <span className="text-primary">Software & App</span> Development Solutions</>}
-          description="We deliver custom-built logistics technology products tailored to your business model."
+          title={title}
+          description={description}
         />
 
         <div className="w-full cursor-grab active:cursor-grabbing">
@@ -171,4 +84,4 @@ const LogisticsSolutions = () => {
   );
 };
 
-export default LogisticsSolutions;
+export default SolutionsCarousel;
