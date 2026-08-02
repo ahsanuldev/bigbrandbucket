@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { FaCaretDown, FaCaretUp, FaWhatsapp } from 'react-icons/fa';
 import { IoCloseOutline } from 'react-icons/io5';
 import Button from '../ui/Button';
@@ -37,6 +37,7 @@ const navItems = [
 ];
 
 const Navbar = () => {
+  const location = useLocation();
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mobileExpandedMenu, setMobileExpandedMenu] = useState(null);
@@ -102,11 +103,12 @@ const Navbar = () => {
               );
             }
 
+            const isActive = location.pathname === item.href;
             return (
               <Link
                 key={item.label}
                 to={item.href}
-                className={`transition-colors ${item.isPrimary ? 'text-primary' : 'text-gray-800 hover:text-primary'}`}
+                className={`transition-colors ${isActive ? 'text-primary font-medium' : 'text-gray-800 hover:text-primary'}`}
               >
                 {item.label}
               </Link>
@@ -190,12 +192,13 @@ const Navbar = () => {
               );
             }
 
+            const isActive = location.pathname === item.href;
             return (
               <Link
                 key={item.label}
                 to={item.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="px-6 py-4 font-medium text-gray-800 hover:text-primary transition-colors"
+                className={`px-6 py-4 font-medium transition-colors ${isActive ? 'text-primary' : 'text-gray-800 hover:text-primary'}`}
               >
                 {item.label}
               </Link>

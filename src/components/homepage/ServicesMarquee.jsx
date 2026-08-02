@@ -40,7 +40,7 @@ const MarqueeLine = ({ items, direction = "left", className = "" }) => {
 
 const ServicesMarquee = () => {
   return (
-    <section className="relative w-full h-[250px] md:h-[300px] flex items-center justify-center overflow-hidden bg-white">
+    <section className="relative w-full h-[180px] md:h-[220px] flex items-center justify-center overflow-hidden bg-white">
       {/* Dark teal strip - rotated up */}
       <div className="absolute top-1/2 left-1/2 w-[120vw] md:w-[110vw] -translate-x-1/2 -translate-y-1/2 -rotate-[4deg] z-10">
         <MarqueeLine 

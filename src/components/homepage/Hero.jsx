@@ -12,7 +12,7 @@ import heroGrid from '../../assets/hero-grid.png';
 
 const Hero = () => {
   return (
-    <section className="relative w-full pt-16 pb-24 md:pt-24 md:pb-32 overflow-hidden bg-white">
+    <section className="relative w-full pt-16 pb-10 md:pt-24 md:pb-16 overflow-hidden bg-white">
       {/* Light Background Grid */}
       <div 
         className="absolute inset-0 z-0 opacity-20"
