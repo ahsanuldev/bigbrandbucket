@@ -14,7 +14,7 @@ const ContactPage = () => {
         title="We're Here to Help You Succeed"
         description="Our team combines innovative thinking, advanced technology, and a customer-first approach to understand your needs, answer your questions, and deliver reliable solutions that move your business forward."
         bgImage={bgImage}
-        className="!pb-40" // Add padding to allow cards to overlap
+        className="pb-40!" // Add padding to allow cards to overlap
       />
       
       <ContactCards />

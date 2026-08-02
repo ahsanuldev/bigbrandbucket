@@ -43,13 +43,13 @@ const ContactCards = () => {
   ];
 
   return (
-    <section className="w-full py-16 md:py-24 bg-transparent -mt-16 md:-mt-24 relative z-10">
-      <div className="max-w-[1200px] mx-auto px-4 md:px-8">
+    <section className="w-full py-16 md:py-24 bg-transparent relative z-10">
+      <div className="max-w-300 mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10">
           {cards.map((card) => (
             <div 
               key={card.id} 
-              className="bg-white rounded-[24px] p-8 md:p-10 flex flex-col items-center text-center shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-gray-50/50 hover:-translate-y-1 transition-transform duration-300"
+              className="bg-white rounded-3xl p-8 md:p-10 flex flex-col items-center text-center shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-gray-50/50 hover:-translate-y-1 transition-transform duration-300"
             >
               <div className="w-16 h-16 md:w-20 md:h-20 mb-6 flex items-center justify-center">
                 <img 

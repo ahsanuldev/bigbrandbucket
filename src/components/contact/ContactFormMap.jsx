@@ -4,12 +4,12 @@ import flagIn from '../../assets/flags/in.svg';
 const ContactFormMap = () => {
   return (
     <section className="w-full py-16 md:py-24 bg-white relative z-10">
-      <div className="max-w-[1200px] mx-auto px-4 md:px-8">
+      <div className="max-w-300 mx-auto px-4 md:px-8">
         
         <div className="bg-white rounded-3xl p-4 md:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-gray-100 flex flex-col lg:flex-row gap-8 lg:gap-12">
           
           {/* Left: Google Map */}
-          <div className="w-full lg:w-1/2 rounded-2xl overflow-hidden h-[400px] lg:h-auto min-h-[400px] bg-gray-100 relative">
+          <div className="w-full lg:w-1/2 rounded-2xl overflow-hidden h-100 lg:h-auto min-h-100 bg-gray-100 relative">
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3508.8105658097034!2d77.03780361507797!3d28.424982682498075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1875d69784df%3A0xc66fb3ecab7c7!2sBig%20Brand%20Bucket%20Pvt%20Ltd%20%7C%20%231%20Top%20Ranked%20Website%20Designing%20%7C%20SEO%20%7C%20Digital%20Marketing%20%7C%20App%20%26%20Software%20Development%20in%20Gurgaon!5e0!3m2!1sen!2sin!4v1689100000000!5m2!1sen!2sin" 
               className="absolute inset-0 w-full h-full border-0"
@@ -51,7 +51,7 @@ const ContactFormMap = () => {
                   className="w-full bg-[#f8fafa] rounded-md px-5 py-3.5 focus:outline-none focus:ring-1 focus:ring-primary/30 transition-colors text-[15px] placeholder-gray-400" 
                 />
                 <div className="flex items-center bg-[#f8fafa] rounded-md px-5 py-3.5 focus-within:ring-1 focus-within:ring-primary/30 transition-colors">
-                  <img src={flagIn} alt="IN" className="w-5 object-cover mr-1.5 rounded-[2px]" />
+                  <img src={flagIn} alt="IN" className="w-5 object-cover mr-1.5 rounded-xs" />
                   <span className="text-gray-500 text-[10px] mr-2">▼</span>
                   <input 
                     type="tel" 
