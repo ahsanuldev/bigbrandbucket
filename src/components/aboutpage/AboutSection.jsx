@@ -33,7 +33,7 @@ const AboutSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           
           {/* Card 1: Our Mission */}
-          <div className="relative rounded-3xl overflow-hidden h-[400px] md:h-[450px] shadow-sm">
+          <div className="relative rounded-3xl overflow-hidden h-100 md:h-112.5 shadow-sm">
             <img 
               src={bgImage} 
               alt="Our Mission Background" 
@@ -51,7 +51,7 @@ const AboutSection = () => {
           </div>
 
           {/* Card 2: Our Commitment */}
-          <div className="relative rounded-3xl overflow-hidden h-[400px] md:h-[450px] shadow-sm">
+          <div className="relative rounded-3xl overflow-hidden h-100 md:h-112.5 shadow-sm">
             <img 
               src={commitmentImage} 
               alt="Our Commitment Background" 

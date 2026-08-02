@@ -59,7 +59,7 @@ const ServiceHero = ({ eyebrow, title, description, checklist, bgImage = default
 
                 <div className="flex w-full border border-gray-300 rounded-md overflow-hidden focus-within:border-primary transition-colors">
                   <div className="flex items-center gap-2 bg-gray-50 px-3 border-r border-gray-300">
-                    <img src={indFlag} alt="Flag" className="w-[18px] object-contain" />
+                    <img src={indFlag} alt="Flag" className="w-4.5 object-contain" />
                     <span className="text-[10px] text-gray-500">▼</span>
                   </div>
                   <input
@@ -89,7 +89,7 @@ const ServiceHero = ({ eyebrow, title, description, checklist, bgImage = default
 
                 <button
                   type="submit"
-                  className="w-full bg-[#0f6d70] hover:bg-[#0c595c] text-white font-medium py-3 rounded-full transition-colors mt-2 text-[15.5px]"
+                  className="w-full bg-primary hover:bg-[#0c595c] text-white font-medium py-3 rounded-full transition-colors mt-2 text-[15.5px]"
                 >
                   Submit
                 </button>

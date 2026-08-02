@@ -8,7 +8,7 @@ const PageHeader = ({ title, subtitle, description, bgImage, children, className
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       {/* Teal Overlay */}
-      <div className="absolute inset-0 bg-[#0f6d70]/85"></div>
+      <div className="absolute inset-0 bg-primary/85"></div>
       
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">

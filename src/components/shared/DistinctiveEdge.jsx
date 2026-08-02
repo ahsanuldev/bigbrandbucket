@@ -8,7 +8,7 @@ import icon4 from '../../assets/about-page/SVG-6.png';
 const DistinctiveEdge = () => {
   return (
     <section className="py-24 bg-white overflow-hidden">
-      <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
+      <div className="max-w-360 mx-auto px-6 md:px-12 lg:px-24">
         
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           

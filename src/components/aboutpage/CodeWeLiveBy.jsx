@@ -30,7 +30,7 @@ const features = [
 
 const CodeWeLiveBy = () => {
   return (
-    <section className="py-24 bg-[#ebf3f3] relative overflow-hidden">
+    <section className="py-24 bg-bg relative overflow-hidden">
       {/* Decorative Ellipse */}
       <img 
         src={ellipseBg} 
@@ -38,7 +38,7 @@ const CodeWeLiveBy = () => {
         className="absolute left-[-5%] md:left-[-3%] top-[40%] -translate-y-1/2 h-[30%] md:h-[40%] object-contain pointer-events-none z-0 opacity-70"
       />
 
-      <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 relative z-10">
+      <div className="max-w-360 mx-auto px-4 md:px-8 lg:px-12 relative z-10">
         <h2 className="text-[32px] md:text-[40px] font-semibold text-center text-[#111111] mb-16">
           The Code We <span className="text-primary">Live By</span>
         </h2>
@@ -48,8 +48,8 @@ const CodeWeLiveBy = () => {
             <div key={idx} className="bg-white p-5 md:p-6 py-8 text-center relative overflow-hidden group cursor-pointer h-full flex flex-col">
               
               {/* Default State */}
-              <div className="flex-grow flex flex-col items-center">
-                <img src={feature.icon} alt={feature.title} className="h-[52px] mx-auto mb-4 object-contain transition-opacity duration-300 group-hover:opacity-0" />
+              <div className="grow flex flex-col items-center">
+                <img src={feature.icon} alt={feature.title} className="h-13 mx-auto mb-4 object-contain transition-opacity duration-300 group-hover:opacity-0" />
                 <h3 className="text-[20px] font-medium text-gray-900 mb-3 transition-opacity duration-300 group-hover:opacity-0">
                   {feature.title}
                 </h3>
@@ -59,7 +59,7 @@ const CodeWeLiveBy = () => {
               </div>
 
               {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-primary p-5 md:p-6 flex flex-col items-center justify-center text-center translate-y-full group-hover:translate-y-0 transition-transform duration-[400ms] ease-out z-10">
+              <div className="absolute inset-0 bg-primary p-5 md:p-6 flex flex-col items-center justify-center text-center translate-y-full group-hover:translate-y-0 transition-transform duration-400 ease-out z-10">
                 <h3 className="text-[17px] font-semibold text-white mb-3">{feature.title}</h3>
                 <p className="text-white/90 text-[13px] leading-relaxed">{feature.description}</p>
               </div>

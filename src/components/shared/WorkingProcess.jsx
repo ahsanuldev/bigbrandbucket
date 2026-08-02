@@ -31,12 +31,12 @@ const WorkingProcess = () => {
           <img 
             src={arrow1} 
             alt="Next Step" 
-            className="hidden md:block absolute top-8 left-[28%] w-[100px] lg:w-[130px] pointer-events-none"
+            className="hidden md:block absolute top-8 left-[28%] w-25 lg:w-32.5 pointer-events-none"
           />
           <img 
             src={arrow2} 
             alt="Next Step" 
-            className="hidden md:block absolute top-8 right-[28%] w-[100px] lg:w-[130px] pointer-events-none"
+            className="hidden md:block absolute top-8 right-[28%] w-25 lg:w-32.5 pointer-events-none"
           />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 relative z-10">
