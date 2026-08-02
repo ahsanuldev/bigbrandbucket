@@ -37,11 +37,11 @@ const Footer = () => {
           <div className="flex flex-col lg:pl-10">
             <h3 className="text-white font-medium text-[19px] mb-5 tracking-wide">Quick Links</h3>
             <ul className="flex flex-col gap-3.5 text-[14.5px]">
-              <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
-              <li><Link to="/about" className="hover:text-white transition-colors">About Us</Link></li>
-              <li><Link to="/portfolio" className="hover:text-white transition-colors">Our Portfolio</Link></li>
-              <li><Link to="#" className="hover:text-white transition-colors">Privacy Policy</Link></li>
-              <li><Link to="#" className="hover:text-white transition-colors">Refund Policy</Link></li>
+              <li><Link to="/" className="hover:text-primary-alt transition-colors">Home</Link></li>
+              <li><Link to="/about" className="hover:text-primary-alt transition-colors">About Us</Link></li>
+              <li><Link to="/portfolio" className="hover:text-primary-alt transition-colors">Our Portfolio</Link></li>
+              <li><Link to="/privacy-policy" className="hover:text-primary-alt transition-colors">Privacy Policy</Link></li>
+              <li><Link to="/refund-policy" className="hover:text-primary-alt transition-colors">Refund Policy</Link></li>
             </ul>
           </div>
 
@@ -49,11 +49,11 @@ const Footer = () => {
           <div className="flex flex-col">
             <h3 className="text-white font-medium text-[19px] mb-5 tracking-wide">Industries</h3>
             <ul className="flex flex-col gap-3.5 text-[14.5px]">
-              <li><Link to="/manufacturing" className="hover:text-white transition-colors">Manufacturing</Link></li>
-              <li><Link to="/logistics" className="hover:text-white transition-colors">Logistic</Link></li>
-              <li><Link to="/construction" className="hover:text-white transition-colors">Construction</Link></li>
-              <li><Link to="/education" className="hover:text-white transition-colors">Education</Link></li>
-              <li><Link to="/travel" className="hover:text-white transition-colors">Travel</Link></li>
+              <li><Link to="/manufacturing" className="hover:text-primary-alt transition-colors">Manufacturing</Link></li>
+              <li><Link to="/logistics" className="hover:text-primary-alt transition-colors">Logistic</Link></li>
+              <li><Link to="/construction" className="hover:text-primary-alt transition-colors">Construction</Link></li>
+              <li><Link to="/education" className="hover:text-primary-alt transition-colors">Education</Link></li>
+              <li><Link to="/travel" className="hover:text-primary-alt transition-colors">Travel</Link></li>
             </ul>
           </div>
 
@@ -61,12 +61,12 @@ const Footer = () => {
           <div className="flex flex-col">
             <h3 className="text-white font-medium text-[19px] mb-5 tracking-wide">Our Services</h3>
             <ul className="flex flex-col gap-3.5 text-[14.5px]">
-              <li><Link to="/app-development" className="hover:text-white transition-colors">App Development</Link></li>
-              <li><Link to="/web-development" className="hover:text-white transition-colors">Web Development</Link></li>
-              <li><Link to="/ui-ux" className="hover:text-white transition-colors">UI/UX</Link></li>
-              <li><Link to="/cross-platform-development" className="hover:text-white transition-colors">Cross Platform Development</Link></li>
-              <li><Link to="/solution-designing" className="hover:text-white transition-colors">Solution Designing</Link></li>
-              <li><Link to="/cloud-computing" className="hover:text-white transition-colors">Cloud Computing</Link></li>
+              <li><Link to="/app-development" className="hover:text-primary-alt transition-colors">App Development</Link></li>
+              <li><Link to="/web-development" className="hover:text-primary-alt transition-colors">Web Development</Link></li>
+              <li><Link to="/ui-ux" className="hover:text-primary-alt transition-colors">UI/UX</Link></li>
+              <li><Link to="/cross-platform-development" className="hover:text-primary-alt transition-colors">Cross Platform Development</Link></li>
+              <li><Link to="/solution-designing" className="hover:text-primary-alt transition-colors">Solution Designing</Link></li>
+              <li><Link to="/cloud-computing" className="hover:text-primary-alt transition-colors">Cloud Computing</Link></li>
             </ul>
           </div>
 
@@ -82,13 +82,13 @@ const Footer = () => {
       </div>
 
       {/* Giant Fading Background Text */}
-      <div className="w-full mt-4 pointer-events-none select-none overflow-hidden flex justify-center">
-        <svg viewBox="0 0 1000 120" className="w-full h-[22vw] sm:h-[18vw] md:h-[15vw] block" preserveAspectRatio="none">
+      <div className="w-full -mt-5 pointer-events-none select-none overflow-hidden flex justify-center">
+        <svg viewBox="0 0 1000 105" className="w-full h-[22vw] sm:h-[18vw] md:h-[15vw] block" preserveAspectRatio="none">
           <defs>
             <linearGradient id="fadeGradient" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stopColor="#ffffff" stopOpacity="0.15" />
-              <stop offset="25%" stopColor="#ffffff" stopOpacity="0.15" />
-              <stop offset="100%" stopColor="#000000" stopOpacity="0.05" />
+              <stop offset="15%" stopColor="#ffffff" stopOpacity="0.1" />
+              <stop offset="100%" stopColor="#000000" stopOpacity="0" />
             </linearGradient>
           </defs>
           <text 

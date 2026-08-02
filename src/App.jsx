@@ -22,6 +22,8 @@ import TravelPage from './pages/TravelPage';
 import AutomotivePage from './pages/AutomotivePage';
 import PortfolioPage from './pages/PortfolioPage';
 import ContactPage from './pages/ContactPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import RefundPolicyPage from './pages/RefundPolicyPage';
 
 const App = () => {
   return (
@@ -52,6 +54,8 @@ const App = () => {
 
           <Route path="/portfolio" element={<PortfolioPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route path="/refund-policy" element={<RefundPolicyPage />} />
         </Routes>
         <Footer />
       </div>
