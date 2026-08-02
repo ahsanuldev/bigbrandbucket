@@ -15,10 +15,10 @@ import TechStackSection from '../components/homepage/TechStackSection';
 import BenefitsGrid from '../components/shared/BenefitsGrid';
 import WhoWeServeSection from '../components/shared/WhoWeServeSection';
 import WhyChooseUsSection from '../components/shared/WhyChooseUsSection';
-import TrustedBy from '../components/homepage/TrustedBy';
-import TestimonialsSection from '../components/homepage/TestimonialsSection';
-import GlobalPresenceSection from '../components/homepage/GlobalPresenceSection';
-import FaqSection from '../components/homepage/FaqSection';
+import TrustedBy from '../components/shared/TrustedBy';
+import TestimonialsSection from '../components/shared/TestimonialsSection';
+import GlobalPresenceSection from '../components/shared/GlobalPresenceSection';
+import FaqSection from '../components/shared/FaqSection';
 
 // Icons for Solutions Carousel and Benefits
 import helmetIcon from '../assets/construction/helmet.png';
