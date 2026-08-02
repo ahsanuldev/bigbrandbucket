@@ -43,7 +43,7 @@ const KeyChallengesSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5 mb-8">
             {challengesList.map((item, index) => (
               <div key={index} className="flex items-start gap-3">
-                <FaCheckCircle className="text-primary mt-[2px] flex-shrink-0 text-[17px]" />
+                <FaCheckCircle className="text-primary mt-0-5 shrink-0 text-[17px]" />
                 <span className="text-[#444444] text-[14.5px] leading-relaxed">
                   {item}
                 </span>

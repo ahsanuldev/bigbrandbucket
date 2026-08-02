@@ -6,6 +6,14 @@ import KeyChallengesSection from '../components/logistics/KeyChallengesSection';
 import LogisticsSolutions from '../components/logistics/LogisticsSolutions';
 import SplitContentSection from '../components/shared/SplitContentSection';
 import SplitCTASection from '../components/shared/SplitCTASection';
+import TechStackSection from '../components/homepage/TechStackSection';
+import LogisticsBenefits from '../components/logistics/LogisticsBenefits';
+import WhoWeServeSection from '../components/logistics/WhoWeServeSection';
+import WhyChooseUsSection from '../components/logistics/WhyChooseUsSection';
+import TrustedBy from '../components/shared/TrustedBy';
+import TestimonialsSection from '../components/shared/TestimonialsSection';
+import GlobalPresenceSection from '../components/shared/GlobalPresenceSection';
+import FaqSection from '../components/shared/FaqSection';
 import featureImg from '../assets/logistics/2151468806.jpg';
 import ctaImg from '../assets/manufacturing/120.jpg';
 
@@ -65,6 +73,15 @@ const LogisticsPage = () => {
         buttonText="Get Started"
         image={ctaImg}
       />
+
+      <TechStackSection />
+      <LogisticsBenefits />
+      <WhoWeServeSection />
+      <WhyChooseUsSection />
+      <TrustedBy />
+      <TestimonialsSection />
+      <GlobalPresenceSection />
+      <FaqSection />
     </main>
   );
 };
