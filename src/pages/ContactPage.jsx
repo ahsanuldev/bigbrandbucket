@@ -4,7 +4,8 @@ import ContactCards from '../components/contact/ContactCards';
 import ContactFormMap from '../components/contact/ContactFormMap';
 import GlobalPresenceSection from '../components/shared/GlobalPresenceSection';
 import FaqSection from '../components/shared/FaqSection';
-import bgImage from '../assets/about-page/25079.jpg';
+import bgImage from '../assets/about-page/e37b828d865eff5aee0394507980868482a42f88.jpg';
+
 
 const ContactPage = () => {
   return (
