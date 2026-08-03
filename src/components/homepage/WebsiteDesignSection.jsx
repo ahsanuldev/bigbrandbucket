@@ -16,7 +16,7 @@ const WebsiteDesignSection = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: container.current,
-        start: 'top 80%',
+        start: 'top 60%',
       }
     });
 

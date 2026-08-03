@@ -28,7 +28,7 @@ const Hero = () => {
       ease: 'power3.out',
       scrollTrigger: {
         trigger: rightImageRef.current,
-        start: 'top 85%',
+        start: 'top 60%',
       }
     });
 

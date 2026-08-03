@@ -18,7 +18,7 @@ const IdeaSolutionSection = () => {
       ease: 'power3.out',
       scrollTrigger: {
         trigger: container.current,
-        start: 'top 80%',
+        start: 'top 60%',
       }
     });
   }, { scope: container });

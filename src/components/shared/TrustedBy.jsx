@@ -28,7 +28,7 @@ const TrustedBy = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: container.current,
-        start: 'top 85%',
+        start: 'top 60%',
       }
     });
 

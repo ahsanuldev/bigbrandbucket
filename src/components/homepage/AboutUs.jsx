@@ -24,7 +24,7 @@ const AboutUs = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: container.current,
-        start: 'top 80%',
+        start: 'top 60%',
       }
     });
 
@@ -52,7 +52,7 @@ const AboutUs = () => {
       ease: 'power3.out',
       scrollTrigger: {
         trigger: container.current,
-        start: 'top 80%',
+        start: 'top 60%',
       }
     });
 

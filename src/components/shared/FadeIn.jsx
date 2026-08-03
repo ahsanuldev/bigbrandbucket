@@ -17,7 +17,7 @@ const FadeIn = ({ children, delay = 0, y = 60, duration = 1, className = "" }) =
       ease: 'power3.out',
       scrollTrigger: {
         trigger: container.current,
-        start: 'top 85%',
+        start: 'top 60%',
       }
     });
   }, { scope: container });

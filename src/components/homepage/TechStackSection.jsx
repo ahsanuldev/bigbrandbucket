@@ -20,7 +20,7 @@ const TechStackSection = () => {
       ease: 'power3.out',
       scrollTrigger: {
         trigger: container.current,
-        start: 'top 80%',
+        start: 'top 60%',
       }
     });
 
@@ -33,7 +33,7 @@ const TechStackSection = () => {
         ease: 'none',
         scrollTrigger: {
           trigger: container.current,
-          start: 'top 85%',
+          start: 'top 60%',
           end: 'center center',
           scrub: 1 // smooth scrubbing
         }

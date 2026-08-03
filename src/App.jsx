@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/shared/Navbar';
 import Footer from './components/shared/Footer';
 import ScrollToTop from './components/shared/ScrollToTop';
+import Lenis from 'lenis';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 // Import Pages
 import HomePage from './pages/HomePage';
@@ -26,6 +31,32 @@ import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import RefundPolicyPage from './pages/RefundPolicyPage';
 
 const App = () => {
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2, // Default is 1.2, gives a nice lightweight smooth feel
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+      wheelMultiplier: 1,
+      smoothTouch: false,
+    });
+
+    // Synchronize Lenis scrolling with GSAP ScrollTrigger
+    lenis.on('scroll', ScrollTrigger.update);
+
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
+    });
+
+    gsap.ticker.lagSmoothing(0);
+
+    return () => {
+      gsap.ticker.remove((time) => {
+        lenis.raf(time * 1000);
+      });
+      lenis.destroy();
+    };
+  }, []);
+
   return (
     <BrowserRouter>
       <ScrollToTop />
