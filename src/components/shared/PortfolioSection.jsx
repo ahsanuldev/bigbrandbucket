@@ -3,6 +3,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import { FiArrowUpRight } from 'react-icons/fi';
 import SectionTitle from '../ui/SectionTitle';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 // Import Swiper styles
 import 'swiper/css';
@@ -34,9 +39,34 @@ const portfolioItems = [
 const PortfolioSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const swiperRef = useRef(null);
+  const container = useRef(null);
+  const titleRef = useRef(null);
+  const carouselRef = useRef(null);
+
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: container.current,
+        start: 'top 80%',
+      }
+    });
+
+    tl.from(titleRef.current, {
+      y: -50,
+      opacity: 0,
+      duration: 1,
+      ease: 'power3.out'
+    })
+    .from(carouselRef.current, {
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      ease: 'power3.out'
+    }, "-=0.5");
+  }, { scope: container });
 
   return (
-    <section className="w-full py-16 md:py-24 bg-white overflow-hidden relative">
+    <section ref={container} className="w-full py-16 md:py-24 bg-white overflow-hidden relative">
       {/* Decorative semi-circles on sides */}
       <img 
         src={ellipseBehind} 
@@ -54,17 +84,19 @@ const PortfolioSection = () => {
       <div className="w-full px-4 md:px-8 lg:px-10 relative z-10">
         
         {/* Header */}
-        <SectionTitle 
-          title={
-            <>
-              Our <span className="text-primary">Portfolio</span>
-            </>
-          }
-          description="We can design any website for any industry"
-        />
+        <div ref={titleRef}>
+          <SectionTitle 
+            title={
+              <>
+                Our <span className="text-primary">Portfolio</span>
+              </>
+            }
+            description="We can design any website for any industry"
+          />
+        </div>
 
         {/* Carousel */}
-        <div className="w-full cursor-grab active:cursor-grabbing mt-8 portfolio-swiper">
+        <div ref={carouselRef} className="w-full cursor-grab active:cursor-grabbing mt-8 portfolio-swiper">
           <Swiper
             ref={swiperRef}
             modules={[Autoplay]}

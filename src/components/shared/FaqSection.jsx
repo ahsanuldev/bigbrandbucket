@@ -1,5 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import SectionTitle from '../ui/SectionTitle';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const faqs = [
   {
@@ -30,18 +35,44 @@ const faqs = [
 
 const FaqSection = () => {
   const [openIndex, setOpenIndex] = useState(1); // Default to second item open as in screenshot
+  const container = useRef(null);
+  const titleRef = useRef(null);
+
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: container.current,
+        start: 'top 80%',
+      }
+    });
+
+    tl.from(titleRef.current, {
+      x: -30,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power3.out'
+    })
+    .from('.faq-item', {
+      x: -30,
+      opacity: 0,
+      duration: 0.6,
+      stagger: 0.1,
+      ease: 'power3.out'
+    }, "-=0.4");
+  }, { scope: container });
 
   const toggleFaq = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <section className="w-full py-16 md:py-24 bg-white">
+    <section ref={container} className="w-full py-16 md:py-24 bg-white overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 md:px-8 lg:px-10">
         
         {/* Header */}
-        <SectionTitle 
-          align="left"
+        <div ref={titleRef}>
+          <SectionTitle 
+            align="left"
           eyebrow="FAQs"
           title={
             <>
@@ -50,6 +81,7 @@ const FaqSection = () => {
           }
           description="Browse through these FAQs to find answers to commonly asked questions."
         />
+        </div>
 
         {/* FAQs Accordion */}
         <div className="mt-8 space-y-4">
@@ -59,7 +91,7 @@ const FaqSection = () => {
             return (
               <div 
                 key={index} 
-                className={`w-full rounded-xl overflow-hidden transition-all duration-300 ${
+                className={`faq-item w-full rounded-xl overflow-hidden transition-colors duration-300 ${
                   isOpen ? 'bg-primary' : 'bg-[#f0f6f5] hover:bg-[#e6f0ef]'
                 }`}
               >

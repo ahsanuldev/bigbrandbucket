@@ -1,5 +1,10 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 import logo1 from '../../assets/logo-1.png';
 import logo4 from '../../assets/logo-4.png';
@@ -14,15 +19,48 @@ const logos = [logo1, logo4, logo5, logo6, logo7];
 const repeatedLogos = [...logos, ...logos, ...logos, ...logos];
 
 const TrustedBy = () => {
+  const container = useRef(null);
+  const title1Ref = useRef(null);
+  const title2Ref = useRef(null);
+  const logosRef = useRef(null);
+
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: container.current,
+        start: 'top 85%',
+      }
+    });
+
+    tl.from(title1Ref.current, {
+      opacity: 0,
+      y: -20,
+      duration: 0.8,
+      ease: 'power2.out'
+    })
+    .from(logosRef.current, {
+      opacity: 0,
+      scale: 0.95,
+      duration: 1,
+      ease: 'power2.out'
+    }, "-=0.4")
+    .from(title2Ref.current, {
+      opacity: 0,
+      y: 20,
+      duration: 0.8,
+      ease: 'power2.out'
+    }, "-=0.4");
+  }, { scope: container });
+
   return (
-    <section className="w-full py-12 md:py-16 bg-bg overflow-hidden border-y border-gray-200/50">
-      <div className="w-full flex items-center justify-between mb-10 md:mb-14">
+    <section ref={container} className="w-full py-12 md:py-16 bg-bg overflow-hidden border-y border-gray-200/50">
+      <div ref={title1Ref} className="w-full flex items-center justify-between mb-10 md:mb-14">
         <img src={fadeLineLeft} alt="decorative line left" className="hidden md:block w-[35%] lg:w-[25%] h-[2px] object-fill" />
         <h2 className="text-2xl md:text-3xl font-normal text-[#111111] whitespace-nowrap px-4 text-center w-full md:w-auto">Trusted By</h2>
         <img src={fadeLineRight} alt="decorative line right" className="hidden md:block w-[35%] lg:w-[25%] h-[2px] object-fill" />
       </div>
 
-      <div className="flex whitespace-nowrap overflow-hidden relative">
+      <div ref={logosRef} className="flex whitespace-nowrap overflow-hidden relative">
         {/* Left/Right Gradients for smooth fade */}
         <div className="absolute top-0 bottom-0 left-0 w-16 md:w-32 bg-gradient-to-r from-bg to-transparent z-10 pointer-events-none"></div>
         <div className="absolute top-0 bottom-0 right-0 w-16 md:w-32 bg-gradient-to-l from-bg to-transparent z-10 pointer-events-none"></div>
@@ -47,7 +85,7 @@ const TrustedBy = () => {
         </motion.div>
       </div>
 
-      <div className="w-full flex items-center justify-between mt-10 md:mt-14">
+      <div ref={title2Ref} className="w-full flex items-center justify-between mt-10 md:mt-14">
         <img src={fadeLineLeft} alt="decorative line left" className="hidden md:block w-[35%] lg:w-[25%] h-[2px] object-fill" />
         <h2 className="text-2xl md:text-3xl font-normal text-[#111111] whitespace-nowrap px-4 text-center w-full md:w-auto">Over 700+ Global Clients</h2>
         <img src={fadeLineRight} alt="decorative line right" className="hidden md:block w-[35%] lg:w-[25%] h-[2px] object-fill" />

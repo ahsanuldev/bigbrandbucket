@@ -5,6 +5,11 @@ import { RiVerifiedBadgeFill } from 'react-icons/ri';
 import { IoStar } from 'react-icons/io5';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { FcGoogle } from 'react-icons/fc';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -53,13 +58,38 @@ const reviews = [
 const TestimonialsSection = () => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+  const container = useRef(null);
+  const headerRef = useRef(null);
+  const swiperWrapperRef = useRef(null);
+
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: container.current,
+        start: 'top 80%',
+      }
+    });
+
+    tl.from(headerRef.current, {
+      y: -30,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power3.out'
+    })
+    .from(swiperWrapperRef.current, {
+      scale: 0.95,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power3.out'
+    }, "-=0.4");
+  }, { scope: container });
 
   return (
-    <section className="w-full py-16 md:py-24 bg-white relative">
+    <section ref={container} className="w-full py-16 md:py-24 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
         
         {/* Top Content */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-16">
+        <div ref={headerRef} className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-16">
           
           <div className="w-full md:w-2/3">
             <h2 className="text-3xl md:text-5xl font-medium text-[#111111] leading-tight mb-4 tracking-tight">
@@ -81,7 +111,7 @@ const TestimonialsSection = () => {
         </div>
 
         {/* Slider Content */}
-        <div className="relative">
+        <div ref={swiperWrapperRef} className="relative">
           <Swiper
             modules={[Navigation, Autoplay]}
             spaceBetween={24}

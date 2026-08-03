@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
 import Button from '../ui/Button';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 // Assets
 import heroTrophyIcon from '../../assets/hero-trophy-icon.svg';
@@ -11,8 +16,32 @@ import heroRightImage from '../../assets/hero-right-image.jpg';
 import heroGrid from '../../assets/hero-grid.png';
 
 const Hero = () => {
+  const container = useRef(null);
+  const rightImageRef = useRef(null);
+  const starRef = useRef(null);
+
+  useGSAP(() => {
+    gsap.from(rightImageRef.current, {
+      y: 50,
+      opacity: 0,
+      duration: 1.2,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: rightImageRef.current,
+        start: 'top 85%',
+      }
+    });
+
+    gsap.to(starRef.current, {
+      rotation: 360,
+      duration: 20,
+      repeat: -1,
+      ease: 'linear',
+    });
+  }, { scope: container });
+
   return (
-    <section className="relative w-full pt-16 pb-10 md:pt-24 md:pb-16 overflow-hidden bg-white">
+    <section ref={container} className="relative w-full pt-16 pb-10 md:pt-24 md:pb-16 overflow-hidden bg-white">
       {/* Light Background Grid */}
       <div 
         className="absolute inset-0 z-0 opacity-20"
@@ -25,6 +54,7 @@ const Hero = () => {
         <div className="w-full lg:w-[55%] relative z-20">
           {/* Star background effect */}
           <img 
+            ref={starRef}
             src={starHeroSection} 
             alt="background shape" 
             draggable={false}
@@ -79,6 +109,7 @@ const Hero = () => {
             
             {/* The main hero visual */}
             <img 
+              ref={rightImageRef}
               src={heroRightImage} 
               alt="IT Services and Solutions" 
               className="w-full h-auto object-contain rounded-3xl z-10 relative"

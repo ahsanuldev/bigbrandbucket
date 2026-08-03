@@ -1,13 +1,44 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import techStackImg from '../../assets/tech-stack.png';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const TechStackSection = () => {
+  const container = useRef(null);
+  const textRef = useRef(null);
+  const imageRef = useRef(null);
+
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: container.current,
+        start: 'top 80%',
+      }
+    });
+
+    tl.from(textRef.current, {
+      x: -50,
+      opacity: 0,
+      duration: 1,
+      ease: 'power3.out'
+    })
+    .from(imageRef.current, {
+      scale: 0.5,
+      opacity: 0,
+      duration: 1,
+      ease: 'back.out(1.7)'
+    }, "-=0.6");
+  }, { scope: container });
+
   return (
-    <section className="w-full py-16 md:py-24 bg-bg">
+    <section ref={container} className="w-full py-16 md:py-24 bg-bg overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
         
         {/* Left Content */}
-        <div className="w-full lg:w-1/2 flex flex-col items-start gap-5 md:gap-6">
+        <div ref={textRef} className="w-full lg:w-1/2 flex flex-col items-start gap-5 md:gap-6">
           <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-medium text-[#111111] leading-tight tracking-tight">
             Our <span className="text-primary">Technologies Stack</span>
           </h2>
@@ -28,7 +59,7 @@ const TechStackSection = () => {
         </div>
 
         {/* Right Image */}
-        <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
+        <div ref={imageRef} className="w-full lg:w-1/2 flex justify-center lg:justify-end">
           <img 
             src={techStackImg} 
             alt="Technologies Stack" 

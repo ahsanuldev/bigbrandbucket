@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import SectionTitle from '../ui/SectionTitle';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 // Import Swiper styles
 import 'swiper/css';
@@ -61,20 +66,49 @@ const services = [
 ];
 
 const ServicesWeOffer = () => {
+  const container = useRef(null);
+  const titleRef = useRef(null);
+  const cardsRef = useRef([]);
+
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: container.current,
+        start: 'top 80%',
+      }
+    });
+
+    tl.from(titleRef.current, {
+      scale: 0.9,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'back.out(1.7)'
+    })
+    .from(cardsRef.current, {
+      y: 50,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.15,
+      ease: 'power3.out'
+    }, "-=0.4");
+  }, { scope: container });
+
   return (
-    <section className="w-full py-16 md:py-24 bg-bg overflow-hidden">
+    <section ref={container} className="w-full py-16 md:py-24 bg-bg overflow-hidden">
       <div className="w-full px-4 md:px-8 lg:px-10">
         
         {/* Header */}
-        <SectionTitle 
-          eyebrow="More Than Solutions"
+        <div ref={titleRef}>
+          <SectionTitle 
+            eyebrow="More Than Solutions"
           title={
             <>
               <span className="text-primary">Services</span> We Offer
             </>
           }
-          description="Smart, reliable solutions tailored to your goals."
-        />
+            description="Smart, reliable solutions tailored to your goals."
+          />
+        </div>
 
         {/* Carousel */}
         <div className="w-full cursor-grab active:cursor-grabbing">
@@ -90,9 +124,12 @@ const ServicesWeOffer = () => {
               1280: { slidesPerView: 5 },
             }}
           >
-            {services.map((service) => (
+            {services.map((service, index) => (
               <SwiperSlide key={service.id} className="!h-auto">
-                <div className="bg-white h-full w-full p-4 md:p-6 flex flex-col items-center text-center shadow-sm relative overflow-hidden group cursor-pointer">
+                <div 
+                  ref={(el) => cardsRef.current[index] = el}
+                  className="bg-white h-full w-full p-4 md:p-6 flex flex-col items-center text-center shadow-sm relative overflow-hidden group cursor-pointer"
+                >
                   
                   {/* Default State */}
                   <div className="w-14 h-14 md:w-16 md:h-16 mb-4 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-0">

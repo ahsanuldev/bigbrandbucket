@@ -1,5 +1,10 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import SectionTitle from '../ui/SectionTitle';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 // Assets
 import ellipseBehind from '../../assets/Ellipse-for-behind.png';
@@ -16,8 +21,35 @@ const locations = [
 ];
 
 const GlobalPresenceSection = () => {
+  const container = useRef(null);
+  const titleRef = useRef(null);
+  const locationsRef = useRef([]);
+
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: container.current,
+        start: 'top 80%',
+      }
+    });
+
+    tl.from(titleRef.current, {
+      opacity: 0,
+      y: 30,
+      duration: 0.8,
+      ease: 'power3.out'
+    })
+    .from(locationsRef.current, {
+      scale: 0.5,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.15,
+      ease: 'back.out(1.5)'
+    }, "-=0.4");
+  }, { scope: container });
+
   return (
-    <section className="w-full py-16 md:py-24 bg-slate-50 overflow-hidden relative">
+    <section ref={container} className="w-full py-16 md:py-24 bg-slate-50 overflow-hidden relative">
       {/* Decorative semi-circles on sides */}
       <img 
         src={ellipseBehind} 
@@ -35,8 +67,9 @@ const GlobalPresenceSection = () => {
       <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-10 relative z-10">
         
         {/* Header */}
-        <SectionTitle 
-          eyebrow="Our Locations"
+        <div ref={titleRef}>
+          <SectionTitle 
+            eyebrow="Our Locations"
           title={
             <>
               See Our <span className="text-primary">Global Presence</span>
@@ -45,11 +78,16 @@ const GlobalPresenceSection = () => {
           description="Our global locations help us connect with clients across markets and time zones, ensuring smooth collaboration and high-quality digital solutions."
           className="max-w-3xl mx-auto"
         />
+        </div>
 
         {/* Locations Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 mt-16 md:mt-20 justify-items-center">
-          {locations.map((loc) => (
-            <div key={loc.id} className="flex flex-col items-center group cursor-default w-full">
+          {locations.map((loc, index) => (
+            <div 
+              key={loc.id} 
+              ref={(el) => locationsRef.current[index] = el}
+              className="flex flex-col items-center group cursor-default w-full"
+            >
               
               {/* Image Container with Fade Effect */}
               <div className="relative h-48 md:h-[280px] w-full flex items-end justify-center mb-6">

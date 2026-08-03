@@ -1,15 +1,46 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { RiTrophyLine, RiThumbUpLine, RiTeamLine } from 'react-icons/ri';
 import flagIn from '../../assets/flags/in.svg';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const ContactSection = () => {
+  const container = useRef(null);
+  const leftRef = useRef(null);
+  const rightRef = useRef(null);
+
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: container.current,
+        start: 'top 80%',
+      }
+    });
+
+    tl.from(leftRef.current, {
+      x: -50,
+      opacity: 0,
+      duration: 1,
+      ease: 'power3.out'
+    })
+    .from(rightRef.current, {
+      x: 50,
+      opacity: 0,
+      duration: 1,
+      ease: 'power3.out'
+    }, "-=0.8");
+  }, { scope: container });
+
   return (
-    <section className="w-full py-16 md:py-24 bg-[#eef5f4]">
+    <section ref={container} className="w-full py-16 md:py-24 bg-[#eef5f4] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-12 items-center lg:items-start">
           
           {/* Left Column */}
-          <div className="w-full lg:w-1/2">
+          <div ref={leftRef} className="w-full lg:w-1/2">
             
             {/* Pill Badge */}
             <div className="bg-white rounded-[20px]  inline-flex flex-col p-5 px-7 mb-10">
@@ -69,7 +100,7 @@ const ContactSection = () => {
           </div>
 
           {/* Right Column (Form) */}
-          <div className="w-full lg:w-1/2">
+          <div ref={rightRef} className="w-full lg:w-1/2">
             <div className="bg-white rounded-xl p-6 md:p-8 w-full">
               <form className="space-y-6">
                 
