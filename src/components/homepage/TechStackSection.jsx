@@ -12,25 +12,33 @@ const TechStackSection = () => {
   const imageRef = useRef(null);
 
   useGSAP(() => {
-    const tl = gsap.timeline({
+    // 1. Text slides in (one-time)
+    gsap.from(textRef.current, {
+      x: -50,
+      opacity: 0,
+      duration: 1,
+      ease: 'power3.out',
       scrollTrigger: {
         trigger: container.current,
         start: 'top 80%',
       }
     });
 
-    tl.from(textRef.current, {
-      x: -50,
-      opacity: 0,
-      duration: 1,
-      ease: 'power3.out'
-    })
-    .from(imageRef.current, {
-      scale: 0.5,
-      opacity: 0,
-      duration: 1,
-      ease: 'back.out(1.7)'
-    }, "-=0.6");
+    // 2. Image scales up based on scroll (scrubbed)
+    gsap.fromTo(imageRef.current, 
+      { scale: 0.7, opacity: 0 },
+      {
+        scale: 1,
+        opacity: 1,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: container.current,
+          start: 'top 85%',
+          end: 'center center',
+          scrub: 1 // smooth scrubbing
+        }
+      }
+    );
   }, { scope: container });
 
   return (
